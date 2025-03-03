@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2cbe9;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .cute-button {
+            display: inline-block;
+            background-color: #fe8fc7; /* Cute pink color */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px; /* Rounded button */
+            box-shadow: 0 5px 10px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cute-button:hover {
+            background-color: #ff85c2; /* Lighter pink on hover */
+            transform: scale(1.05); /* Slight bounce */
+            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.6);
+        }
+
+        .cute-button:active {
+            transform: scale(0.95); /* Button press effect */
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Our Photo Gallery</h1>
+    
+    <a href="unnamed.html" class="cute-button">🩷 Click to go back 🩷</a>
+
+
+    <div class="gallery-container">
+        <script>
+            let images = [
+                "100_0149.jpg", "100_0523.jpg", "100_1012.jpg", "100_1015.jpg", "100_1265.jpg", "100_1338.JPG",
+                "19DB1515-D771-4593-913B-F0DEAC9C2C08.jpg", "1C6C24E9-10BE-417F-BE8E-B32C863572E7.jpg",
+                "1ED70537-6884-45EE-95C2-60446ADD8B91.jpg", "28CA7174-1D05-4D48-A27A-C5FBB56B4B2A.jpg",
+                "71FFEB82-7A5B-4A7A-949B-02189C3EE8D8.jpg", "CCB2F198-953E-40CE-BCA1-488FBB6C3D17.jpg",
+                "DSC03606.jpg", "DSC03653.jpg", "EB100081-5E4F-4308-9122-2574C60E0817.jpg",
+                "EF941D9B-9DC1-412B-9DD4-6F98B428754A.jpg", "File_049.png", "File_050.png", "File_060.png",
+                "IMG_0475.jpg", "IMG_2110.jpg", "IMG_3303.jpg", "IMG_3848.jpg", "IMG_4018.jpg", "IMG_4176.jpg",
+                "IMG_4314.jpg", "IMG_4397.JPG", "IMG_4398.JPG", "IMG_4441.JPG", "IMG_4554.jpg", "IMG_4559.JPG",
+                "IMG_4637.PNG", "IMG_4638.PNG", "IMG_4641.PNG", "IMG_4643.PNG", "IMG_5345.jpg", "IMG_5433.JPG",
+                "IMG_6250.JPG", "IMG_6279.jpg", "IMG_6370.jpg", "IMG_6409.JPG", "IMG_6687.JPG", "IMG_6688.JPG",
+                "IMG_7332.PNG", "IMG_7361.JPG", "IMG_7427.jpg", "IMG_7734.jpg", "IMG_7735.jpg", "IMG_7737.jpg",
+                "IMG_7738.jpg", "IMG_7739.jpg", "IMG_7743.jpg", "IMG_7747.jpg", "IMG_7750.jpg", "IMG_8183.jpg",
+                "IMG_8316.JPG", "IMG_8464.JPG", "IMG_8920.jpg", "IMG_9351.jpg", "IMG_9420.jpg", "IMG_9714.jpg",
+                "IMG_9715.jpg", "IMG_9716.jpg", "IMG_9936.JPEG"
+            ];
+
+            images.forEach(img => {
+                document.write(`<img src="pics/${img}" alt="Photo" onclick="openFullscreen('pics/${img}')">`);
+            });
+        </script>
+    </div>
+
+    <div class="fullscreen" id="fullscreen">
+        <span class="close" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreen-img" src="">
+    </div>
+
+    <script>
+        function openFullscreen(src) {
+            document.getElementById("fullscreen-img").src = src;
+            document.getElementById("fullscreen").style.display = "flex";
+        }
+
+        function closeFullscreen() {
+            document.getElementById("fullscreen").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

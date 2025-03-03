@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bajo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2cbe9;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%; 
+            max-width: 600px; /* Limit width */
+            height: 400px; /* Set a fixed height */
+            margin: auto;
+            overflow: hidden; /* Prevents any overflow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2cbe9; /* Background color for padding effect */
+        }
+        .slides {
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Ensures the full image is visible */
+        }
+        .cute-button {
+            display: inline-block;
+            background-color: #fe8fc7; /* Cute pink color */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px; /* Rounded button */
+            box-shadow: 0 5px 10px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px; /* Moves the button slightly lower */
+        }
+
+        .cute-button:hover {
+            background-color: #ff85c2; /* Lighter pink on hover */
+            transform: scale(1.05); /* Slight bounce */
+            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.6);
+        }
+
+        .cute-button:active {
+            transform: scale(0.95); /* Button press effect */
+        }
+        .cat-button {
+            display: inline-block;
+            background-color: #fe8fc7; /* Cute pink color */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px; /* Rounded button */
+            box-shadow: 0 5px 10px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px; /* Moves the button slightly lower */
+        }
+
+        .cat-button:hover {
+            background-color: #ff85c2; /* Lighter pink on hover */
+            transform: scale(1.05); /* Slight bounce */
+            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.6);
+        }
+
+        .cat-button:active {
+            transform: scale(0.95); /* Button press effect */
+        }
+        .popsicle-container {
+            margin-top: 70px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popsicle-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .popsicle {
+            width: 450px; /* Increased size */
+            display: block;
+            margin: auto;
+        }
+
+        #popsicle-text {
+            position: absolute;
+            top: 15%; /* Adjust to align with the stick */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000; /* Cute purple */
+            text-align: center;
+            width: 70%;
+            border-radius: 10px;
+        }
+
+        .popsicle-button {
+            display: block;
+            margin: 20px auto 0; /* Spacing below the popsicle */
+            background-color: #fe8fc7; /* Cute pink color */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px; /* Rounded button */
+            border: none; /* Removes the border */
+            box-shadow: none; /* Removes any shadow */
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popsicle-button:hover {
+            background-color: #ff85c2; /* Lighter pink on hover */
+            transform: scale(1.05); /* Slight bounce */
+        }
+
+        .popsicle-button:active {
+            transform: scale(0.95); /* Press effect */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+    </style>
+</head>
+<body>
+    <h1>Me and Bajo</h1>
+    <div class="slideshow-container">
+        <img class="slides" src="pics/100_0149.jpg" alt="Picture 0">
+        <img class="slides" src="pics/100_0523.jpg" alt="Picture 1">
+        <img class="slides" src="pics/100_1012.jpg" alt="Picture 2">
+        <img class="slides" src="pics/100_1015.jpg" alt="Picture 3">
+        <img class="slides" src="pics/100_1265.jpg" alt="Picture 4">
+        <img class="slides" src="pics/100_1338.JPG" alt="Picture 5">
+        <img class="slides" src="pics/19DB1515-D771-4593-913B-F0DEAC9C2C08.jpg" alt="Picture 6">
+        <img class="slides" src="pics/1C6C24E9-10BE-417F-BE8E-B32C863572E7.jpg" alt="Picture 7">
+        <img class="slides" src="pics/1ED70537-6884-45EE-95C2-60446ADD8B91.jpg" alt="Picture 8">
+        <img class="slides" src="pics/28CA7174-1D05-4D48-A27A-C5FBB56B4B2A.jpg" alt="Picture 9">
+        <img class="slides" src="pics/71FFEB82-7A5B-4A7A-949B-02189C3EE8D8.jpg" alt="Picture 10">
+        <img class="slides" src="pics/CCB2F198-953E-40CE-BCA1-488FBB6C3D17.jpg" alt="Picture 11">
+        <img class="slides" src="pics/DSC03606.jpg" alt="Picture 12">
+        <img class="slides" src="pics/DSC03653.jpg" alt="Picture 13">
+        <img class="slides" src="pics/EB100081-5E4F-4308-9122-2574C60E0817.jpg" alt="Picture 14">
+        <img class="slides" src="pics/EF941D9B-9DC1-412B-9DD4-6F98B428754A.jpg" alt="Picture 15">
+        <img class="slides" src="pics/File_049.png" alt="Picture 16">
+        <img class="slides" src="pics/File_050.png" alt="Picture 17">
+        <img class="slides" src="pics/File_060.png" alt="Picture 18">
+        <img class="slides" src="pics/IMG_0475.jpg" alt="Picture 19">
+        <img class="slides" src="pics/IMG_2110.jpg" alt="Picture 20">
+        <img class="slides" src="pics/IMG_3303.jpg" alt="Picture 21">
+        <img class="slides" src="pics/IMG_3848.jpg" alt="Picture 22">
+        <img class="slides" src="pics/IMG_4018.jpg" alt="Picture 23">
+        <img class="slides" src="pics/IMG_4176.jpg" alt="Picture 24">
+        <img class="slides" src="pics/IMG_4314.jpg" alt="Picture 25">
+        <img class="slides" src="pics/IMG_4397.JPG" alt="Picture 26">
+        <img class="slides" src="pics/IMG_4398.JPG" alt="Picture 27">
+        <img class="slides" src="pics/IMG_4441.JPG" alt="Picture 28">
+        <img class="slides" src="pics/IMG_4554.jpg" alt="Picture 29">
+        <img class="slides" src="pics/IMG_4559.JPG" alt="Picture 30">
+        <img class="slides" src="pics/IMG_4637.PNG" alt="Picture 31">
+        <img class="slides" src="pics/IMG_4638.PNG" alt="Picture 32">
+        <img class="slides" src="pics/IMG_4641.PNG" alt="Picture 33">
+        <img class="slides" src="pics/IMG_4643.PNG" alt="Picture 34">
+        <img class="slides" src="pics/IMG_5345.jpg" alt="Picture 35">
+        <img class="slides" src="pics/IMG_5433.JPG" alt="Picture 36">
+        <img class="slides" src="pics/IMG_6250.JPG" alt="Picture 37">
+        <img class="slides" src="pics/IMG_6279.jpg" alt="Picture 38">
+        <img class="slides" src="pics/IMG_6370.jpg" alt="Picture 39">
+        <img class="slides" src="pics/IMG_6409.JPG" alt="Picture 40">
+        <img class="slides" src="pics/IMG_6687.JPG" alt="Picture 41">
+        <img class="slides" src="pics/IMG_6688.JPG" alt="Picture 42">
+        <img class="slides" src="pics/IMG_7332.PNG" alt="Picture 43">
+        <img class="slides" src="pics/IMG_7361.JPG" alt="Picture 44">
+        <img class="slides" src="pics/IMG_7427.jpg" alt="Picture 45">
+        <img class="slides" src="pics/IMG_7734.jpg" alt="Picture 46">
+        <img class="slides" src="pics/IMG_7735.jpg" alt="Picture 47">
+        <img class="slides" src="pics/IMG_7737.jpg" alt="Picture 48">
+        <img class="slides" src="pics/IMG_7738.jpg" alt="Picture 49">
+        <img class="slides" src="pics/IMG_7739.jpg" alt="Picture 50">
+        <img class="slides" src="pics/IMG_7743.jpg" alt="Picture 51">
+        <img class="slides" src="pics/IMG_7747.jpg" alt="Picture 52">
+        <img class="slides" src="pics/IMG_7750.jpg" alt="Picture 53">
+        <img class="slides" src="pics/IMG_8183.jpg" alt="Picture 54">
+        <img class="slides" src="pics/IMG_8316.JPG" alt="Picture 55">
+        <img class="slides" src="pics/IMG_8464.JPG" alt="Picture 56">
+        <img class="slides" src="pics/IMG_8920.jpg" alt="Picture 57">
+        <img class="slides" src="pics/IMG_9351.jpg" alt="Picture 58">
+        <img class="slides" src="pics/IMG_9420.jpg" alt="Picture 59">
+        <img class="slides" src="pics/IMG_9714.jpg" alt="Picture 60">
+        <img class="slides" src="pics/IMG_9715.jpg" alt="Picture 61">
+        <img class="slides" src="pics/IMG_9716.jpg" alt="Picture 62">
+        <img class="slides" src="pics/IMG_9936.JPEG" alt="Picture 63">        
+
+        
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    
+    <a href="us.html" class="cute-button">🩷 View Our Pictures 🩷</a>
+    <!-- <a href="mayilu.html" class="cat-button">🩷 Our Kitty 🩷</a>-->
+    
+    <div class="footer-text">
+        <p>Because a physical photo album can be difficult to carry around 😊🩷</p>
+    </div>
+
+    <div class="popsicle-container">
+        <div class="popsicle-wrapper">
+            <img src="popsicle.png" class="popsicle" alt="Popsicle Stick">
+            <p id="popsicle-text">Click the button!</p>
+        </div>
+        <button class="cute-button popsicle-button" onclick="showRandomMessage()">Things I love about you</button>
+    </div>    
+    
+    
+    
+    <script>
+        let slideIndex = 0;
+        let slides = Array.from(document.getElementsByClassName("slides")); // Convert HTMLCollection to Array
+    
+        // Shuffle function using Fisher-Yates algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+    
+        shuffleArray(slides); // Shuffle the slides array
+    
+        function showSlides() {
+            slides.forEach(slide => slide.style.display = "none"); // Hide all slides
+            slides[slideIndex].style.display = "block"; // Show the current slide
+        }
+    
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0; // Loop back to the first image
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1; // Loop to the last image
+            }
+            showSlides();
+        }
+    
+        // Auto slideshow every 3 seconds
+        function autoSlides() {
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            showSlides();
+            setTimeout(autoSlides, 3000);
+        }
+    
+        // Initialize slideshow
+        showSlides();
+        setTimeout(autoSlides, 3000);
+    </script>
+    
+    <script>
+        function showRandomMessage() {
+            let messages = [
+                "The way your face moves when you begin to smile",
+                "The shine in your pupils when we lock eyes",
+                "The way your hair falls so perfectly",
+                "How good it feels to embrace and hug you",
+                "Your adorable obsession with the color pink",
+                "How cultured and proud you are to be Mallu", 
+                "How helpful and comforting you are no matter the situation",
+                "How adorable your laugh is",
+                "How wide your smile gets when you're laughing",
+                "How much you want to cuddle in our sleep",
+                "How smart you are without even realizing it",
+                "The way my arm wraps around your waist",
+                "How we can enjoy rotting but also enjoy silence together",
+                "How attached you are to me",
+                "How you always want to hang out",
+                "How much you genuinely care about me",
+                "How loyal you are",
+                "How much you love music",
+                "Your cute and funny dances",
+                "How we can be around all types of people together",
+
+            ];
+    
+            let randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("popsicle-text").innerText = messages[randomIndex];
+        }
+    </script>
+    
+    
+    
+</body>
+</html>
